@@ -1,0 +1,12 @@
+.news-content img {
+	max-width: 100%;
+    height: auto;
+    
+}
+
+.large-textarea {
+    height: 80px; /* Adjust the height value to your preference */
+    width: 100%; /* Set the width to 100% to span the entire available width */
+    resize: vertical; /* This allows vertical resizing of the textarea */
+    overflow-y: auto; /* Enable vertical scrollbar when necessary */
+}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-10'>
+
+            {% include('messages.html') %}
+            
+            <!-- <h2>_News_</h2> -->
+            {%for news in news_list:%}
+                <h4><a href="{{ url_for('news.single_news', news_id=news.id) }}">{{news.title}}</a></h4> 
+       
+                <p>{{ news.published.strftime('%d.%m.%Y') }} | Comments: {{ news.comments_count()}}</p>
+                <hr/>
+            {%endfor%}
+        </div>
+        
+       <!--  <div class='col-2'>
+            <h6>Forecast
+                {% if city_name %}
+                    {{ city_name }}:
+                {% else %}
+                    - Service error -
+                {% endif %}
+            </h6>
+
+            {% if weather %}
+                Temperature: {{ weather.temp_C }} (°C)<br>
+                Feels Like : {{ weather.FeelsLikeC }} (°C)
+            {% else %}
+                - Service error -
+            {% endif %}            
+        </div> -->
+
+        <div class='col-2'>
+            {% include('weather.html') %}
+        </div>
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class='row'>
+        <div class='col-12'>
+
+            {% include('messages.html') %}
+
+
+            <h2>Users in the database:</h2>
+            <ol>
+            {%for n_users in name_user:%}
+            <h6><li>
+                <div class="fixed-spaces">
+                name: {{n_users.username}}  | id: {{n_users.id}} | {{n_users.role}} | {{n_users.email}}</div>
+            </li></h6> 
+                      
+            {%endfor%}
+            </ol>
+
+            <h3>Number of news in the database:</h3>
+            {%if news_count %}
+                Quantity is equal: {{ news_count }}
+            {% endif %}
+            
+
+
+        </div>
+        
+        <div class='col-8'>
+            
+
+        </div>
+    </div>
+{% endblock %}

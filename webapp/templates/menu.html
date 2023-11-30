@@ -1,0 +1,66 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+  
+  <h6><a class="navbar-brand" href="#"><em>Some news about AI.</em></a></h6>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/"><u>                 </u></a>
+        </li>
+
+
+        <li class="nav-item">
+          <h5><a class="nav-link active" aria-current="page" href="/"><u>Start page</u></a></h5>
+        </li>
+
+
+              
+
+      </ul>
+
+      <!-- <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">MySearch</button>
+      </form> -->
+
+
+
+
+      <ul class="navbar-nav">
+        {% if current_user.is_authenticated %}        
+          <li class="nav-item">
+            <h5><span class="nav-link">Hello <strong><em>{{ current_user.username }}</em>!</strong></span></h5>
+          </li> 
+
+          {% if current_user.is_admin %}
+            <li class="nav-item">
+              <h5><a class="nav-link" href="{{ url_for('admin.admin_index', next=request.full_path) }}"><u>Administration</u></a></h5>
+            </li>
+          {% endif %}
+
+          <li class="nav-item">
+            <h5><a class="nav-link" href="{{ url_for('user.logout', next=request.full_path) }}"><u>Sign out</u></a></h5>
+          </li> 
+
+        {% else %}
+          <li class="nav-item">
+            <h5><a class="nav-link" href="{{ url_for('user.register') }}"><u>Registration</u></a></h5>
+          </li>
+          <li class="nav-item">
+            <h5><a class="nav-link" href="{{ url_for('user.login', next=request.full_path) }}"><u>Sign in</u></a></h5>
+          </li>
+        {% endif %}
+        
+      </ul>
+
+    </div>
+
+  </div>
+</nav>

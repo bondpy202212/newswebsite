@@ -1,0 +1,110 @@
+ 
+ -------------- celery@HOME-PC v5.2.7 (dawn-chorus)
+--- ***** ----- 
+-- ******* ---- Windows-10-10.0.25300-SP0 2023-11-30 12:47:12
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         tasks:0x247e94ee490
+- ** ---------- .> transport:   redis://localhost:6379/0
+- ** ---------- .> results:     disabled://
+- *** --- * --- .> concurrency: 4 (solo)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.getnews_content
+  . tasks.getnews_snippets
+
+[2023-11-30 12:47:12,456: INFO/MainProcess] Connected to redis://localhost:6379/0
+[2023-11-30 12:47:12,459: INFO/MainProcess] mingle: searching for neighbors
+[2023-11-30 12:47:13,482: INFO/MainProcess] mingle: all alone
+[2023-11-30 12:47:13,529: INFO/MainProcess] celery@HOME-PC ready.
+[2023-11-30 12:47:44,146: INFO/MainProcess] Task tasks.getnews_snippets[72132fbf-f5ab-4a3c-a2ca-3861d6014651] received
+[2023-11-30 12:47:45,361: INFO/MainProcess] Task tasks.getnews_snippets[72132fbf-f5ab-4a3c-a2ca-3861d6014651] succeeded in 1.2030000000013388s: None
+[2023-11-30 12:47:45,367: INFO/MainProcess] Task tasks.getnews_content[cf2d16b9-0457-408c-90b4-381cd65c683a] received
+[2023-11-30 12:47:45,370: INFO/MainProcess] Task tasks.getnews_content[cf2d16b9-0457-408c-90b4-381cd65c683a] succeeded in 0.0s: None
+[2023-11-30 12:50:00,007: INFO/MainProcess] Task tasks.getnews_content[fc235b2e-18a3-4bd0-8856-65041e134729] received
+[2023-11-30 12:50:00,010: INFO/MainProcess] Task tasks.getnews_content[fc235b2e-18a3-4bd0-8856-65041e134729] succeeded in 0.0s: None
+[2023-11-30 12:50:00,013: INFO/MainProcess] Task tasks.getnews_snippets[3ef7dbcc-b94b-4701-af10-3a1b7b17d334] received
+[2023-11-30 12:50:01,088: INFO/MainProcess] Task tasks.getnews_snippets[3ef7dbcc-b94b-4701-af10-3a1b7b17d334] succeeded in 1.0779999999995198s: None
+[2023-11-30 12:55:00,002: INFO/MainProcess] Task tasks.getnews_snippets[b9559cd3-02bd-423e-9c15-6e0d0aa557f8] received
+[2023-11-30 12:55:01,352: INFO/MainProcess] Task tasks.getnews_snippets[b9559cd3-02bd-423e-9c15-6e0d0aa557f8] succeeded in 1.3430000000007567s: None
+[2023-11-30 12:55:01,365: INFO/MainProcess] Task tasks.getnews_content[62876542-e473-43eb-82d0-c26e07aa49d4] received
+[2023-11-30 12:55:01,368: INFO/MainProcess] Task tasks.getnews_content[62876542-e473-43eb-82d0-c26e07aa49d4] succeeded in 0.0s: None
+[2023-11-30 13:00:00,020: INFO/MainProcess] Task tasks.getnews_snippets[e740c026-0110-4f9c-902b-80569f4c5ee5] received
+[2023-11-30 13:00:01,172: INFO/MainProcess] Task tasks.getnews_snippets[e740c026-0110-4f9c-902b-80569f4c5ee5] succeeded in 1.1410000000014406s: None
+[2023-11-30 13:00:01,179: INFO/MainProcess] Task tasks.getnews_content[5061db90-d34a-4277-8a89-8c2415dcb4a9] received
+[2023-11-30 13:00:01,184: INFO/MainProcess] Task tasks.getnews_content[5061db90-d34a-4277-8a89-8c2415dcb4a9] succeeded in 0.0s: None
+[2023-11-30 13:05:00,005: INFO/MainProcess] Task tasks.getnews_snippets[4f7e9313-b138-49fe-b5d0-933052adecdc] received
+[2023-11-30 13:05:01,278: INFO/MainProcess] Task tasks.getnews_snippets[4f7e9313-b138-49fe-b5d0-933052adecdc] succeeded in 1.264999999999418s: None
+[2023-11-30 13:05:01,278: INFO/MainProcess] Task tasks.getnews_content[83ee6c46-e97b-4d81-8a7a-672ce3526010] received
+[2023-11-30 13:05:01,285: INFO/MainProcess] Task tasks.getnews_content[83ee6c46-e97b-4d81-8a7a-672ce3526010] succeeded in 0.01600000000144064s: None
+[2023-11-30 13:10:00,023: INFO/MainProcess] Task tasks.getnews_snippets[345ed527-7c99-4637-996d-c5c1d7af4eb3] received
+[2023-11-30 13:10:01,476: INFO/MainProcess] Task tasks.getnews_snippets[345ed527-7c99-4637-996d-c5c1d7af4eb3] succeeded in 1.4530000000013388s: None
+[2023-11-30 13:10:01,481: INFO/MainProcess] Task tasks.getnews_content[cbffa890-8f32-4eca-8dcd-f0ba86b42686] received
+[2023-11-30 13:10:01,483: INFO/MainProcess] Task tasks.getnews_content[cbffa890-8f32-4eca-8dcd-f0ba86b42686] succeeded in 0.0s: None
+[2023-11-30 13:15:00,009: INFO/MainProcess] Task tasks.getnews_content[b48e6833-e23e-4f07-9529-db1f175cc481] received
+[2023-11-30 13:15:00,009: INFO/MainProcess] Task tasks.getnews_content[b48e6833-e23e-4f07-9529-db1f175cc481] succeeded in 0.0s: None
+[2023-11-30 13:15:00,014: INFO/MainProcess] Task tasks.getnews_snippets[04ed4ee0-97e8-40e0-be30-90ae67222589] received
+[2023-11-30 13:15:02,736: INFO/MainProcess] Task tasks.getnews_snippets[04ed4ee0-97e8-40e0-be30-90ae67222589] succeeded in 2.7180000000007567s: None
+[2023-11-30 13:20:00,005: INFO/MainProcess] Task tasks.getnews_snippets[e8a48a6d-dad2-4f5f-b04e-a22ba3b4adb5] received
+[2023-11-30 13:20:01,095: INFO/MainProcess] Task tasks.getnews_snippets[e8a48a6d-dad2-4f5f-b04e-a22ba3b4adb5] succeeded in 1.0779999999995198s: None
+[2023-11-30 13:20:01,097: INFO/MainProcess] Task tasks.getnews_content[4c9ce03d-ecfd-4223-a651-76fdb04d72cf] received
+[2023-11-30 13:20:01,099: INFO/MainProcess] Task tasks.getnews_content[4c9ce03d-ecfd-4223-a651-76fdb04d72cf] succeeded in 0.015000000001236913s: None
+[2023-11-30 13:25:00,004: INFO/MainProcess] Task tasks.getnews_snippets[a6c47e0a-6a6c-4e48-a23a-8e3c14013268] received
+[2023-11-30 13:25:01,896: INFO/MainProcess] Task tasks.getnews_snippets[a6c47e0a-6a6c-4e48-a23a-8e3c14013268] succeeded in 1.889999999999418s: None
+[2023-11-30 13:25:01,896: INFO/MainProcess] Task tasks.getnews_content[a5817e75-3495-42b7-a7d6-25d64c884b58] received
+[2023-11-30 13:25:01,904: INFO/MainProcess] Task tasks.getnews_content[a5817e75-3495-42b7-a7d6-25d64c884b58] succeeded in 0.0s: None
+[2023-11-30 13:30:00,004: INFO/MainProcess] Task tasks.getnews_snippets[d7c020f1-58e2-4163-b5e1-6a908919bb03] received
+[2023-11-30 13:30:01,035: INFO/MainProcess] Task tasks.getnews_snippets[d7c020f1-58e2-4163-b5e1-6a908919bb03] succeeded in 1.0310000000008586s: None
+[2023-11-30 13:30:01,038: INFO/MainProcess] Task tasks.getnews_content[52dc4c41-0ed8-4368-ab0a-4fadf13fc87f] received
+[2023-11-30 13:30:01,041: INFO/MainProcess] Task tasks.getnews_content[52dc4c41-0ed8-4368-ab0a-4fadf13fc87f] succeeded in 0.0s: None
+[2023-11-30 13:35:00,004: INFO/MainProcess] Task tasks.getnews_content[03345e41-0471-4b9c-a6ae-51ed62b5d236] received
+[2023-11-30 13:35:00,008: INFO/MainProcess] Task tasks.getnews_content[03345e41-0471-4b9c-a6ae-51ed62b5d236] succeeded in 0.0s: None
+[2023-11-30 13:35:00,011: INFO/MainProcess] Task tasks.getnews_snippets[a833fdba-1e04-4dfc-b5cb-cd6eb6bd16fd] received
+[2023-11-30 13:35:01,070: INFO/MainProcess] Task tasks.getnews_snippets[a833fdba-1e04-4dfc-b5cb-cd6eb6bd16fd] succeeded in 1.0619999999998981s: None
+[2023-11-30 13:40:00,003: INFO/MainProcess] Task tasks.getnews_content[b810ae01-a333-4a4b-bf55-d05b0ff4a28e] received
+[2023-11-30 13:40:00,006: INFO/MainProcess] Task tasks.getnews_content[b810ae01-a333-4a4b-bf55-d05b0ff4a28e] succeeded in 0.0s: None
+[2023-11-30 13:40:00,009: INFO/MainProcess] Task tasks.getnews_snippets[967d47ca-eaf5-417b-93af-5e9db5001405] received
+[2023-11-30 13:40:01,018: INFO/MainProcess] Task tasks.getnews_snippets[967d47ca-eaf5-417b-93af-5e9db5001405] succeeded in 1.0s: None
+[2023-11-30 13:45:00,004: INFO/MainProcess] Task tasks.getnews_snippets[ffffd376-aa72-4961-b9f5-10364a9dec1f] received
+[2023-11-30 13:45:01,048: INFO/MainProcess] Task tasks.getnews_snippets[ffffd376-aa72-4961-b9f5-10364a9dec1f] succeeded in 1.0310000000008586s: None
+[2023-11-30 13:45:01,050: INFO/MainProcess] Task tasks.getnews_content[26fed00f-aaa3-4bff-91d2-f62cbe3fe798] received
+[2023-11-30 13:45:01,052: INFO/MainProcess] Task tasks.getnews_content[26fed00f-aaa3-4bff-91d2-f62cbe3fe798] succeeded in 0.0s: None
+[2023-11-30 13:50:00,004: INFO/MainProcess] Task tasks.getnews_content[c9cb7d17-e705-4e74-8df4-49d616d6e40b] received
+[2023-11-30 13:50:00,006: INFO/MainProcess] Task tasks.getnews_content[c9cb7d17-e705-4e74-8df4-49d616d6e40b] succeeded in 0.0s: None
+[2023-11-30 13:50:00,010: INFO/MainProcess] Task tasks.getnews_snippets[41701b19-2354-421a-8ba7-2e78701188d4] received
+[2023-11-30 13:50:01,049: INFO/MainProcess] Task tasks.getnews_snippets[41701b19-2354-421a-8ba7-2e78701188d4] succeeded in 1.0310000000008586s: None
+[2023-11-30 13:55:00,009: INFO/MainProcess] Task tasks.getnews_snippets[8a54ceae-eb75-44f1-994b-33f6c401730a] received
+[2023-11-30 13:55:01,169: INFO/MainProcess] Task tasks.getnews_snippets[8a54ceae-eb75-44f1-994b-33f6c401730a] succeeded in 1.1560000000008586s: None
+[2023-11-30 13:55:01,172: INFO/MainProcess] Task tasks.getnews_content[3158a3d9-b4ef-4177-86ff-d5e1fcd60162] received
+[2023-11-30 13:55:01,174: INFO/MainProcess] Task tasks.getnews_content[3158a3d9-b4ef-4177-86ff-d5e1fcd60162] succeeded in 0.0s: None
+[2023-11-30 14:00:00,003: INFO/MainProcess] Task tasks.getnews_content[db71f65b-a17a-42ef-a907-865b221cb40b] received
+[2023-11-30 14:00:00,007: INFO/MainProcess] Task tasks.getnews_content[db71f65b-a17a-42ef-a907-865b221cb40b] succeeded in 0.0s: None
+[2023-11-30 14:00:00,010: INFO/MainProcess] Task tasks.getnews_snippets[b7bcd9a3-797f-4af6-abde-66df9109e66b] received
+[2023-11-30 14:00:02,297: INFO/MainProcess] Task tasks.getnews_snippets[b7bcd9a3-797f-4af6-abde-66df9109e66b] succeeded in 2.2810000000008586s: None
+[2023-11-30 14:05:00,004: INFO/MainProcess] Task tasks.getnews_snippets[e967dbfc-cc2d-4ff7-8aee-46c0c41af4c2] received
+[2023-11-30 14:05:01,737: INFO/MainProcess] Task tasks.getnews_snippets[e967dbfc-cc2d-4ff7-8aee-46c0c41af4c2] succeeded in 1.7180000000007567s: None
+[2023-11-30 14:05:01,739: INFO/MainProcess] Task tasks.getnews_content[9da9a1e7-490e-4711-8c57-d1d48314ce8c] received
+[2023-11-30 14:05:03,169: INFO/MainProcess] Task tasks.getnews_content[9da9a1e7-490e-4711-8c57-d1d48314ce8c] succeeded in 1.4220000000004802s: None
+[2023-11-30 14:10:00,003: INFO/MainProcess] Task tasks.getnews_content[b1b39776-e39a-41fb-a04b-1b35711e2863] received
+[2023-11-30 14:10:00,006: INFO/MainProcess] Task tasks.getnews_content[b1b39776-e39a-41fb-a04b-1b35711e2863] succeeded in 0.0s: None
+[2023-11-30 14:10:00,009: INFO/MainProcess] Task tasks.getnews_snippets[69d0169b-8a6f-4bed-ab31-9d62dcd7d956] received
+[2023-11-30 14:10:00,997: INFO/MainProcess] Task tasks.getnews_snippets[69d0169b-8a6f-4bed-ab31-9d62dcd7d956] succeeded in 0.9840000000003783s: None
+[2023-11-30 14:15:00,004: INFO/MainProcess] Task tasks.getnews_content[a4bed901-db37-44cd-86fc-8c9872149222] received
+[2023-11-30 14:15:00,006: INFO/MainProcess] Task tasks.getnews_content[a4bed901-db37-44cd-86fc-8c9872149222] succeeded in 0.0s: None
+[2023-11-30 14:15:00,009: INFO/MainProcess] Task tasks.getnews_snippets[b44b9eb4-2f44-4e8d-8951-bb59f949d7e5] received
+[2023-11-30 14:15:01,176: INFO/MainProcess] Task tasks.getnews_snippets[b44b9eb4-2f44-4e8d-8951-bb59f949d7e5] succeeded in 1.1710000000002765s: None
+[2023-11-30 14:20:00,007: INFO/MainProcess] Task tasks.getnews_snippets[aabda72e-16eb-43c5-a029-a73691562155] received
+[2023-11-30 14:20:01,651: INFO/MainProcess] Task tasks.getnews_snippets[aabda72e-16eb-43c5-a029-a73691562155] succeeded in 1.639999999999418s: None
+[2023-11-30 14:20:01,675: INFO/MainProcess] Task tasks.getnews_content[05fee742-fce7-460a-935f-f20fc163feb2] received
+[2023-11-30 14:20:01,675: INFO/MainProcess] Task tasks.getnews_content[05fee742-fce7-460a-935f-f20fc163feb2] succeeded in 0.0s: None
+
+worker: Hitting Ctrl+C again will terminate all running tasks!
+
+worker: Warm shutdown (MainProcess)
+
+worker: Cold shutdown (MainProcess)

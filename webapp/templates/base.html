@@ -1,0 +1,73 @@
+<!-- Add news lesson 4_3_5 -->
+
+
+<!-- Required meta tags -->
+<!--  -->
+<!-- !doctype html -  for html -->
+<!doctype html> 
+<!-- html lang="en" - lenduage -->
+<html lang="en">
+  <head>
+    <!-- meta charset="utf-8" - codding site -->
+    <meta charset="utf-8">
+    <!-- name="viewport" - for view os, android, windows -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  -->
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <link     href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/monokai-sublime.min.css" rel="stylesheet" >
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>{{ page_title }}</title>
+  </head>
+  <body>
+    {%  include 'menu.html' %}
+    <div class="container">
+    <h5> <em>{{ page_title }}:</em> </h5>
+         {% block content %}{% endblock %}
+
+        
+    
+    </div>
+
+    <!--  -->
+    <!-- Oprional Javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+
+    <!-- This Javascript  for load better picture from SQl (img data-src)-->
+    <script>
+    window.addEventListener('DOMContentLoaded', function() {
+        var lazyImages = [].slice.call(document.querySelectorAll('img[data-src]'));
+
+        if ('IntersectionObserver' in window) {
+            var lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.removeAttribute('data-src');
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
+
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        } else {
+            // Fallback
+            lazyImages.forEach(function(lazyImage) {
+                lazyImage.src = lazyImage.dataset.src;
+                lazyImage.removeAttribute('data-src');
+            });
+        }
+    });
+    </script>
+
+  </body>
