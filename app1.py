@@ -34,7 +34,7 @@ scheduler = sched.scheduler(time.time, time.sleep)
 
 # Планирование задачи для выполнения каждые 24 часа
 scheduler.enter(0, 1, schedule_task)  # Запустить задачу сразу
-scheduler.enter(86400, 1, schedule_task)  # Запустить задачу после 24 часов (в секундах)
+scheduler.enter(10, 1, schedule_task)  # Запустить задачу после 24 часов (в секундах)
 
 # Логирование в файл
 logging.basicConfig(filename='scheduler.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
