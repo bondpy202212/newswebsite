@@ -13,10 +13,10 @@
 
 # For VM
 import os
-import locale
+# import locale
 
 # Set the locale to 'C'
-locale.setlocale(locale.LC_TIME, 'C')
+# locale.setlocale(locale.LC_TIME, 'C')
 
 from tasks import celery_app
 
@@ -25,7 +25,8 @@ if __name__ == '__main__':
     os.environ['FORKED_BY_MULTIPROCESSING'] = '1'
 
     # Construct the command to be executed with shell redirection
-    command = "celery -A tasks worker --loglevel=info --pool=solo >> celery_logs.txt 2>&1"
+    # command = "celery -A tasks worker --loglevel=info --pool=solo >> celery_logs.txt 2>&1"
+    command = "celery -A tasks worker --loglevel=info --pool=solo"
 
     # Execute the command using os.system()
     os.system(command)
