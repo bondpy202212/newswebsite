@@ -12,10 +12,15 @@
 
 
 # For VM
-from celery import Celery
-
-app = Celery('app1', broker='redis://localhost:6379/0')
-app.autodiscover_tasks(['tasks'])
+import os
+from tasks import celery_app
 
 if __name__ == '__main__':
-    app.start()
+    # Set the FORKED_BY_MULTIPROCESSING environment variable
+    os.environ['FORKED_BY_MULTIPROCESSING'] = '1'
+
+    # Construct the command to be executed with shell redirection
+    command = "celery -A tasks worker --loglevel=info --pool=solo >> celery_logs.txt 2>&1"
+
+    # Execute the command using os.system()
+    os.system(command)
