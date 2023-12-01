@@ -31,11 +31,11 @@ def setup_periodic_tasks(sender, **kwargs):
 	# sender.add_periodic_task(crontab(second='*/10'), getnews_snippets.s())
 	# sender.add_periodic_task(crontab(second='*/10'), getnews_content.s())
 
-	sender.add_periodic_task(crontab(minute='*/5'), getnews_snippets.s())
-	sender.add_periodic_task(crontab(minute='*/5'), getnews_content.s())
+	sender.add_periodic_task(crontab(minute='*/1'), getnews_snippets.s())
+	sender.add_periodic_task(crontab(minute='*/1'), getnews_content.s())
 
-	# sender.add_periodic_task(crontab(hour='*/1'), getnews_snippets.s())
-	# sender.add_periodic_task(crontab(hour='*/1'), getnews_content.s())
+	# sender.add_periodic_task(crontab(hour='*/24'), getnews_snippets.s())
+	# sender.add_periodic_task(crontab(hour='*/24'), getnews_content.s())
 
 	# sender.add_periodic_task(crontab(day_of_week='*', hour='0'), getnews_snippets.s())
 	# sender.add_periodic_task(crontab(day_of_week='*', hour='0'), getnews_content.s())
