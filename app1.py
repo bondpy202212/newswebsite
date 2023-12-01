@@ -12,11 +12,10 @@
 
 
 # For VM
-import os
+from celery import Celery
 
-def run_celery():
-    os.environ['FORKED_BY_MULTIPROCESSING'] = '1'
-    os.system('/home/bondar1983ovdoc1/newswebsite/env/bin/celery -A app1 worker --loglevel=info > celery_logs.txt 2>&1')
+app = Celery('app1', broker='redis://localhost:6379/0')
+app.autodiscover_tasks(['tasks'])
 
 if __name__ == '__main__':
-    run_celery()
+    app.start()

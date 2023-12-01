@@ -15,3 +15,5 @@ pip_test.py
 t.txt
 t2.txt
 celerybeat-schedule.*
+config.py
+webapp.db
