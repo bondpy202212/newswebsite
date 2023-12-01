@@ -13,6 +13,11 @@
 
 # For VM
 import os
+import locale
+
+# Set the locale to 'C'
+locale.setlocale(locale.LC_TIME, 'C')
+
 from tasks import celery_app
 
 if __name__ == '__main__':
