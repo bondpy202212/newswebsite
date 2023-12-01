@@ -13,7 +13,6 @@
 
 # For VM
 
-
 import sched
 import time
 import logging
@@ -44,14 +43,15 @@ logging.basicConfig(filename='scheduler.log', level=logging.INFO, format='%(asct
 logging.info('Scheduler started')
 
 if __name__ == '__main__':
-    # Запуск приложения Flask
-    flask_app.run()
+    # Запуск приложения Flask на порту 5001
+    flask_app.run(port=5001)
 
     # Запуск планировщика
     scheduler.run()
 
 # Логирование завершения
 logging.info('Scheduler stopped')
+
 
 
 
