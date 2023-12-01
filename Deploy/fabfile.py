@@ -10,14 +10,21 @@
 
 
 
-from fabric.api import env, settings, run, local, cd, sudo
+# from fabric.api import env, settings, run, local, cd, sudo
 
-# vm_ip = "34.127.103.238"
-vm_ip = "34.83.16.228"
+from config import mIP, mNAME, mADRESSVM
 
 
-env.hosts = [vm_ip]
-env.user = "bondar1983ovdoc1"
+# vm_ip = "34.83.16.228"
+
+
+# env.hosts = [vm_ip]
+# env.user = "bondar1983ovdoc1"
+
+env.hosts = [mIP]
+env.user = mNAME
+
+
 # env.key_filename = "C:/.ssh/id_rsa"
 # env.reject_unknown_hosts = False
 # env.disable_known_hosts = True
@@ -28,7 +35,8 @@ def test():
         local("date")
 
 def update():
-	with cd("/home/bondar1983ovdoc1/server_weather_news2023"):		
+	with cd(mADRESSVM):	
+	# with cd("/home/bondar1983ovdoc1/server_weather_news2023"):		
 		run("git stash")
 		run("git pull")
 		sudo("supervisorctl restart flask")
