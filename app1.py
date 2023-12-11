@@ -18,6 +18,7 @@ import time
 import logging
 from webapp import create_app
 from webapp.news.parsers import getnews
+import threading
 
 # Создание объекта приложения Flask
 flask_app = create_app()
@@ -34,7 +35,7 @@ scheduler = sched.scheduler(time.time, time.sleep)
 
 # Планирование задачи для выполнения каждые 24 часа
 scheduler.enter(0, 1, schedule_task)  # Запустить задачу сразу
-scheduler.enter(10, 1, schedule_task)  # Запустить задачу после 24 часов (в секундах)
+scheduler.enter(10, 1, schedule_task)  # Запустить задачу через 10 секунд
 
 # Логирование в файл
 logging.basicConfig(filename='scheduler.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -43,11 +44,17 @@ logging.basicConfig(filename='scheduler.log', level=logging.INFO, format='%(asct
 logging.info('Scheduler started')
 
 if __name__ == '__main__':
-    # Запуск приложения Flask на порту 5001
-    flask_app.run(port=5001)
+    # Запуск приложения Flask на порту 5001 в отдельном потоке
+    app_thread = threading.Thread(target=flask_app.run, kwargs={'port': 5001})
+    app_thread.start()
 
     # Запуск планировщика
     scheduler.run()
+
+    print('start')
+
+# Ожидание завершения потока сервера Flask
+app_thread.join()
 
 # Логирование завершения
 logging.info('Scheduler stopped')
