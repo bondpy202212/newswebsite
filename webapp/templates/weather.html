@@ -7,10 +7,21 @@
 </h6>
 
 {% if weather %}
+    
+    <style>
+      body {
+        font-size: 16px;
+      }
+      
+      p {
+        min-height: 20px;
+      }
+    </style>
 
+    <p>
     <div style="white-space: nowrap;">
     Temperature  {{ weather.temp_C }}(°C)<br>
-    Feels like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.FeelsLikeC }}(°C)<br>
+    Feels like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.FeelsLikeC }}(°C)<br>
     Temp max  &nbsp;&nbsp;&nbsp;&nbsp;{{ weather.temp_max }}(°C)<br>
     Temp min  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.temp_min }}(°C)<br>
     Pressure  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.pressure }}(hPa)<br>
@@ -19,6 +30,7 @@
     Wind speed  &nbsp;&nbsp;{{ weather.wind_speed }}(m/s)<br>
     Direct wind  &nbsp;&nbsp;&nbsp;{{ weather.wind_deg }}(&rarr;)<br>
     </div>
+    </p>
 
 
 
