@@ -7,30 +7,84 @@
 </h6>
 
 {% if weather %}
-    
-    <style>
-      body {
-        font-size: 16px;
-      }
-      
-      p {
-        min-height: 20px;
-      }
-    </style>
 
-    <p>
-    <div style="white-space: nowrap;">
-    Temperature  {{ weather.temp_C }}(°C)<br>
+    <!-- <div style="white-space: nowrap;">
+    Temperature{{weather.temp_C}}(°C)<br>
     Feels like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.FeelsLikeC }}(°C)<br>
-    Temp max  &nbsp;&nbsp;&nbsp;&nbsp;{{ weather.temp_max }}(°C)<br>
-    Temp min  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.temp_min }}(°C)<br>
+    Temp max  &nbsp;&nbsp;&nbsp;{{ weather.temp_max }}(°C)<br>
+    Temp min  &nbsp;&nbsp;&nbsp;&nbsp;{{ weather.temp_min }}(°C)<br>
+
     Pressure  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.pressure }}(hPa)<br>
-    Humidity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.humidity }}(%)<br>
-    Visibility  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.visibility }}(km)<br>
-    Wind speed  &nbsp;&nbsp;{{ weather.wind_speed }}(m/s)<br>
-    Direct wind  &nbsp;&nbsp;&nbsp;{{ weather.wind_deg }}(&rarr;)<br>
+    Humidity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.humidity }}(%)<br>
+    Visibility  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.visibility }}(km)<br>
+    Wind speed  {{ weather.wind_speed }}(m/s)<br>
+    Direct wind &nbsp;&nbsp;{{ weather.wind_deg }}(&rarr;)<br>
+    </div> -->
+
+    <div style="white-space: nowrap;">
+    <table>
+        <tr>
+            <td>Temp:</td>
+            <td>{{weather.temp_C}}(°C)</td>
+        </tr>
+        <tr>
+            <td>Feels like:</td>
+        <td>{{ weather.FeelsLikeC }}(°C)</td>
+        </tr>
+        <tr>
+            <td>Temp max:</td>
+            <td>{{ weather.temp_max }}(°C)</td>
+        </tr>
+        <tr>
+            <td>Temp min:</td>
+            <td>{{ weather.temp_min }}(°C)</td>
+        </tr>
+        <tr>
+            <td>Pressure:</td>
+            <td>{{ weather.pressure }}(hPa)</td>
+        </tr>
+        <tr>
+            <td>Humidity:</td>
+            <td>{{ weather.humidity }}(%))</td>
+        </tr>
+        <tr>
+            <td>Visibility:</td>
+            <td>{{ weather.visibility }}(km)</td>
+        </tr>
+        <tr>
+            <td>Wind speed:</td>
+            <td>{{ weather.wind_speed }}(m/s)</td>
+        </tr>
+        <tr>
+            <td>Direct wind:</td>
+            <td>{{ weather.wind_deg }}(&rarr;)</td>
+        </tr>
+
+
+    </table>
     </div>
-    </p>
+
+
+
+     <!-- <p>
+    <div style="white-space: nowrap;">
+    Temperature:{{weather.temp_C}}(°C)<br>
+    Feels like:{{ weather.FeelsLikeC }}(°C)<br>
+    Temp max:{{ weather.temp_max }}(°C)<br>
+
+    Temp min:{{ weather.temp_min }}(°C)<br>
+
+    Pressure:{{ weather.pressure }}(hPa)<br>
+
+    Humidity:{{ weather.humidity }}(%)<br>
+
+    Visibility:{{ weather.visibility }}(km)<br>
+
+    Wind speed:{{ weather.wind_speed }}(m/s)<br>
+    Direct wind:{{ weather.wind_deg }}(&rarr;)<br>
+    </div>
+    </p> -->
+
 
 
 
