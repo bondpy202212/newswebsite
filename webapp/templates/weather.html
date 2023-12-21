@@ -7,7 +7,7 @@
 </h6>
 
 {% if weather %}
-    <h4>  
+    <h6>  
     <div style="white-space: nowrap;">
     Temperature  {{ weather.temp_C }}(°C)<br>
     Feels like&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.FeelsLikeC }}(°C)<br>
@@ -19,7 +19,7 @@
     Wind speed  &nbsp;&nbsp;{{ weather.wind_speed }}(m/s)<br>
     Direct wind  &nbsp;&nbsp;&nbsp;{{ weather.wind_deg }}(&rarr;)<br>
     </div>
-    </h4>  
+    </h6>  
 
 
 {% else %}
