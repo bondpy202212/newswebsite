@@ -16,12 +16,17 @@
     Temp max  &nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.temp_max }}(°C)<br>
     <div style="white-space: nowrap;">
     Temp min  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.temp_min }}(°C)<br>
-    Pressure  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.pressure }}(hPa)<br>
-    Humidity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.humidity }}(%)<br>
-    Visibility  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ weather.visibility }}(km)<br>
-    Wind speed  &nbsp;&nbsp;{{ weather.wind_speed }}(m/s)<br>
-    Direct wind  &nbsp;&nbsp;&nbsp;{{ weather.wind_deg }}(&rarr;)<br>
-    </div>
+    <div style="white-space: nowrap;">
+    Pressure  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.pressure }}(hPa)<br>
+    <div style="white-space: nowrap;">
+    Humidity  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.humidity }}(%)<br>
+    <div style="white-space: nowrap;">
+    Visibility  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>{{ weather.visibility }}(km)<br>
+    <div style="white-space: nowrap;">
+    Wind speed  &nbsp;&nbsp;</div>{{ weather.wind_speed }}(m/s)<br>
+    <div style="white-space: nowrap;">
+    Direct wind  &nbsp;&nbsp;&nbsp;</div>{{ weather.wind_deg }}(&rarr;)<br>
+    
 
 
 {% else %}
