@@ -45,7 +45,7 @@ def setup_periodic_tasks(sender, **kwargs):
 
 if __name__=='__main__':
 	with flask_app.app_context():
-		# getnews.get_news_snippets()
+		getnews.get_news_snippets()
 		getnews.get_news_content()
 
 
