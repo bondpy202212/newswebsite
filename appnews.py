@@ -8,7 +8,9 @@ from webapp import create_app
 from webapp.news.parsers import getnews
 
 # Создание приложения Flask
-flask_app = create_app()
+# flask_app = create_app()
+app = create_app()
+flask_app = app
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -32,7 +34,7 @@ def schedule_jobs():
 if __name__ == '__main__':
     t = threading.Thread(target=schedule_jobs)
     t.start()
-    app()
+    flask_app.run()
 
 
 
