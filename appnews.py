@@ -1,3 +1,40 @@
+# from schedule import every
+# import threading
+# import logging
+# from datetime import datetime
+
+# from webapp import create_app
+# from webapp.news.parsers import getnews
+
+# # Создание приложения Flask
+# flask_app = create_app()
+
+# logging.basicConfig(level=logging.INFO)
+# log = logging.getLogger(__name__)
+
+# def getnews_snippets():
+#     with flask_app.app_context():
+#         getnews.get_news_snippets()
+#         log.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+
+# def getnews_content():
+#     with flask_app.app_context():
+#         getnews.get_news_content()
+#         log.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+
+# def schedule_jobs():
+#     while True:
+#         every(10).seconds.do(getnews_snippets)
+#         every(10).seconds.do(getnews_content)
+#         time.sleep(10)  # Пауза перед выполнением следующей планировки
+
+# if __name__ == '__main__':
+#     t = threading.Thread(target=schedule_jobs)
+#     t.start()
+
+    
+
+
 from schedule import every, run_pending
 import time
 import logging
@@ -73,44 +110,44 @@ if __name__ == '__main__':
 
 
 
-# # ++++++++++++++++++++++++++++++++++
-# # for BOT
-# # ++++++++++++++++++++++++++++++++++
-from schedule import every, run_pending
-import time
-import logging
-from datetime import datetime
+# # # ++++++++++++++++++++++++++++++++++
+# # # for BOT
+# # # ++++++++++++++++++++++++++++++++++
+# from schedule import every, run_pending
+# import time
+# import logging
+# from datetime import datetime
 
-from webapp import create_app
-from webapp.news.parsers import getnews
+# from webapp import create_app
+# from webapp.news.parsers import getnews
 
-# Создание приложения Flask
-flask_app = create_app()
+# # Создание приложения Flask
+# flask_app = create_app()
 
-def getnews_snippets():
-    with flask_app.app_context():
-        getnews.get_news_snippets()
-        logging.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+# def getnews_snippets():
+#     with flask_app.app_context():
+#         getnews.get_news_snippets()
+#         logging.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
-def getnews_content():
-    with flask_app.app_context():
-        getnews.get_news_content()
-        logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+# def getnews_content():
+#     with flask_app.app_context():
+#         getnews.get_news_content()
+#         logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
-# Настройка логирования для записи в файл
-log_file_name = 'app.log'
-logging.basicConfig(filename=log_file_name, level=logging.INFO)
+# # Настройка логирования для записи в файл
+# log_file_name = 'app.log'
+# logging.basicConfig(filename=log_file_name, level=logging.INFO)
 
-getnews_snippets()
-getnews_content()
+# getnews_snippets()
+# getnews_content()
 
-def app():
-    while True:
-        run_pending()
-        time.sleep(1)
+# def app():
+#     while True:
+#         run_pending()
+#         time.sleep(1)
         
-if __name__ == '__main__':
-    app()
+# if __name__ == '__main__':
+#     app()
 
 
 
