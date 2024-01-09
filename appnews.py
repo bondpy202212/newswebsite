@@ -59,8 +59,9 @@ logging.basicConfig(filename=log_file_name, level=logging.INFO)
 
 def app():
     while True:
-        run_pending()
         time.sleep(1)
+        run_pending()
+        
         
 if __name__ == '__main__':
     every(10).seconds.do(getnews_snippets) 
