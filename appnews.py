@@ -31,28 +31,28 @@ timeout = 60
 # ----------- 
 # for testing
 # -----------            
-# start = datetime.now()
-# getnews_snippets()
-# finish = datetime.now() - start
-# print(f"time run getnew: {finish}")
-# getnews_content()
-
-# every(10).seconds.do(getnews_snippets)   
-# time.sleep(5)
-# every(10).seconds.do(getnews_content)
-# -----------            
-
-# -----------
-# working version
-# -----------
+start = datetime.now()
 getnews_snippets()
-time.sleep(60)
+finish = datetime.now() - start
+print(f"time run getnew: {finish}")
 getnews_content()
 
-every().day.at("12:00").do(getnews_snippets)
-time.sleep(60)
-every().day.at("12:00").do(getnews_content)
-# -----------
+every(10).seconds.do(getnews_snippets)   
+time.sleep(5)
+every(10).seconds.do(getnews_content)
+-----------            
+
+# # -----------
+# # working version
+# # -----------
+# getnews_snippets()
+# time.sleep(60)
+# getnews_content()
+
+# every().day.at("12:00").do(getnews_snippets)
+# time.sleep(60)
+# every().day.at("12:00").do(getnews_content)
+# # -----------
 
 def app():
     while True:
