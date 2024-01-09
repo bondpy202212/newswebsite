@@ -40,7 +40,7 @@ getnews_content()
 every(10).seconds.do(getnews_snippets)   
 time.sleep(5)
 every(10).seconds.do(getnews_content)
------------            
+# -----------            
 
 # # -----------
 # # working version
