@@ -49,6 +49,9 @@ if __name__=='__main__':
 		getnews.get_news_content()
 
 
+
+
+
 # from webapp import weather_html
 
 # if __name__=='__main__':
