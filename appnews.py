@@ -24,9 +24,9 @@ log_file_name = 'app.log'
 logging.basicConfig(filename=log_file_name, level=logging.INFO)
 
 
-workers = 1
-bind = '0.0.0.0:8000'
-timeout = 60
+# # # workers = 1
+# # # bind = '0.0.0.0:8000'
+# # # timeout = 60
 
 # ----------- 
 # for testing
