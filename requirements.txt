@@ -28,10 +28,12 @@ Jinja2==3.1.2
 kombu==5.2.4
 Mako==1.2.4
 MarkupSafe==2.1.2
+packaging==23.2
 prompt-toolkit==3.0.38
 pytz==2023.3
 redis==4.5.5
 requests==2.30.0
+schedule==1.2.1
 six==1.16.0
 soupsieve==2.4.1
 SQLAlchemy==2.0.13
