@@ -28,14 +28,14 @@ logging.basicConfig(filename=log_file_name, level=logging.INFO)
 # # # bind = '0.0.0.0:8000'
 # # # timeout = 60
 
-# ----------- 
-# for testing
-# -----------            
-start = datetime.now()
-getnews_snippets()
-finish = datetime.now() - start
-print(f"time run getnew: {finish}")
-getnews_content()
+# # ----------- 
+# # for testing
+# # -----------            
+# start = datetime.now()
+# getnews_snippets()
+# finish = datetime.now() - start
+# print(f"time run getnew: {finish}")
+# getnews_content()
 
 every(10).seconds.do(getnews_snippets)   
 time.sleep(5)
