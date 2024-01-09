@@ -54,8 +54,7 @@ logging.basicConfig(filename=log_file_name, level=logging.INFO)
 # every().day.at("12:00").do(getnews_content)
 # # -----------
 
-every(10).seconds.do(getnews_snippets) 
-every(10).seconds.do(getnews_content)
+
 
 
 def app():
@@ -64,51 +63,53 @@ def app():
         time.sleep(1)
         
 if __name__ == '__main__':
+    every(10).seconds.do(getnews_snippets) 
+    every(10).seconds.do(getnews_content)
     
-
-    app()
-
-
+    while True:
+        app()
 
 
-# # # ++++++++++++++++++++++++++++++++++
-# # # for BOT
-# # # ++++++++++++++++++++++++++++++++++
-# from schedule import every, run_pending
-# import time
-# import logging
-# from datetime import datetime
 
-# from webapp import create_app
-# from webapp.news.parsers import getnews
 
-# # Создание приложения Flask
-# flask_app = create_app()
+# # ++++++++++++++++++++++++++++++++++
+# # for BOT
+# # ++++++++++++++++++++++++++++++++++
+from schedule import every, run_pending
+import time
+import logging
+from datetime import datetime
 
-# def getnews_snippets():
-#     with flask_app.app_context():
-#         getnews.get_news_snippets()
-#         logging.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+from webapp import create_app
+from webapp.news.parsers import getnews
 
-# def getnews_content():
-#     with flask_app.app_context():
-#         getnews.get_news_content()
-#         logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+# Создание приложения Flask
+flask_app = create_app()
 
-# # Настройка логирования для записи в файл
-# log_file_name = 'app.log'
-# logging.basicConfig(filename=log_file_name, level=logging.INFO)
+def getnews_snippets():
+    with flask_app.app_context():
+        getnews.get_news_snippets()
+        logging.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
-# getnews_snippets()
-# getnews_content()
+def getnews_content():
+    with flask_app.app_context():
+        getnews.get_news_content()
+        logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
-# def app():
-#     while True:
-#         run_pending()
-#         time.sleep(1)
+# Настройка логирования для записи в файл
+log_file_name = 'app.log'
+logging.basicConfig(filename=log_file_name, level=logging.INFO)
+
+getnews_snippets()
+getnews_content()
+
+def app():
+    while True:
+        run_pending()
+        time.sleep(1)
         
-# if __name__ == '__main__':
-#     app()
+if __name__ == '__main__':
+    app()
 
 
 
