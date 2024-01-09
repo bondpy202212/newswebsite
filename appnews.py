@@ -54,14 +54,17 @@ logging.basicConfig(filename=log_file_name, level=logging.INFO)
 # every().day.at("12:00").do(getnews_content)
 # # -----------
 
+every(10).seconds.do(getnews_snippets) 
+every(10).seconds.do(getnews_content)
+
+
 def app():
     while True:
         run_pending()
         time.sleep(1)
         
 if __name__ == '__main__':
-    every(10).seconds.do(getnews_snippets) 
-    every(10).seconds.do(getnews_content)
+    
 
     app()
 
