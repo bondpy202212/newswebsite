@@ -1,47 +1,102 @@
 import logging
+import time
 from datetime import datetime
-from celery import Celery
-from celery.schedules import crontab
 
 from webapp import create_app
-from webapp.news.parsers import getnews
+
 
 flask_app = create_app()
-celery_app = Celery('appnews', broker='redis://localhost:6379/0')
 
-# # Настройка логирования для записи в файл
 log_file_name = 'app.log'
 logging.basicConfig(filename=log_file_name, level=logging.INFO)
-# logging.basicConfig(level=logging.INFO,
-#                     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
-#                     handlers=[logging.FileHandler(log_file_name)])
 
-@celery_app.task
-def getnews_snippets():
-    with flask_app.app_context():
-        getnews.get_news_snippets()
-        logging.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
-
-@celery_app.task
-def getnews_content():
-    with flask_app.app_context():
-        getnews.get_news_content()
-        logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
-
-@celery_app.task
 def test_func():
     with flask_app.app_context():
         logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
-@celery_app.on_after_configure.connect
-def setup_periodic_tasks(sender, **kwargs):
-    sender.add_periodic_task(crontab(minute='*/1'), test_func.s())
+if __name__ == "__main__":
+    while True:
+        test_func()
+        time.sleep(10)
+
+
+
+# # ----------- 
+# # for file " celery_worker.conf"
+# # -----------  
+"""
+sudo nano /etc/supervisor/conf.d/appnews.conf
+
+[program:appnews]
+command=/home/bondar1983ovdoc1/newswebsite/env/bin/python /home/bondar1983ovdoc1/newswebsite/appnews.py
+directory=/home/bondar1983ovdoc1/newswebsite
+user=bondar1983ovdoc1
+autostart=true
+autorestart=true
+startsecs=10
+startretries=3
+redirect_stderr=true
+stdout_logfile=/home/bondar1983ovdoc1/newswebsite/appnews.log
+
+---------
+sudo rm /etc/supervisor/conf.d/celery_worker.conf
+sudo rm /etc/supervisor/conf.d/celery_beat.conf
+---------
+
+"""
+
+
+
+
+
+
+
+# import logging
+# from datetime import datetime
+# from celery import Celery
+# from celery.schedules import crontab
+
+# from webapp import create_app
+# from webapp.news.parsers import getnews
+
+# flask_app = create_app()
+# celery_app = Celery('appnews', broker='redis://localhost:6379/0')
+
+# # # Настройка логирования для записи в файл
+# log_file_name = 'app.log'
+# logging.basicConfig(filename=log_file_name, level=logging.INFO)
+# # logging.basicConfig(level=logging.INFO,
+# #                     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
+# #                     handlers=[logging.FileHandler(log_file_name)])
+
+# @celery_app.task
+# def getnews_snippets():
+#     with flask_app.app_context():
+#         getnews.get_news_snippets()
+#         logging.info(f'getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+
+# @celery_app.task
+# def getnews_content():
+#     with flask_app.app_context():
+#         getnews.get_news_content()
+#         logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+
+# @celery_app.task
+# def test_func():
+#     with flask_app.app_context():
+#         logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+
+# @celery_app.on_after_configure.connect
+# def setup_periodic_tasks(sender, **kwargs):
+#     sender.add_periodic_task(crontab(minute='*/1'), test_func.s())
 
 
 # if __name__ == '__main__':
 #     celery_app.start()
 
-
+"""
+ sudo nano /home/bondar1983ovdoc1/newswebsite/app.log
+"""
 
 # # ----------- 
 # # for file " celery_worker.conf"
@@ -79,8 +134,6 @@ autostart=true
 autorestart=true
 stderr_logfile=/home/bondar1983ovdoc1/newswebsite/celery/beat.err.log
 stdout_logfile=/home/bondar1983ovdoc1/newswebsite/celery/beat.out.log
-
-
 
 """
 
