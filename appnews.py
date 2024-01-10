@@ -15,9 +15,7 @@ def test_func():
         logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
 if __name__ == "__main__":
-    while True:
-        test_func()
-        time.sleep(10)
+    test_func()
 
 
 
