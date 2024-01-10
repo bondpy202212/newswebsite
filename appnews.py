@@ -34,9 +34,9 @@ def test_function():
 
 @celery_app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
-    # sender.add_periodic_task(crontab(second='*/10'), getnews_snippets.s())
-    # sender.add_periodic_task(crontab(second='*/10'), getnews_content.s())
-    sender.add_periodic_task(crontab(second='*/10'), test_function.s())
+    sender.add_periodic_task(crontab(second='*/10'), getnews_snippets.s())
+    sender.add_periodic_task(crontab(second='*/10'), getnews_content.s())
+    # sender.add_periodic_task(crontab(second='*/10'), test_function.s())
 
 if __name__ == "__main__":
     celery_app.start()
