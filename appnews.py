@@ -28,7 +28,8 @@ def getnews_content():
 
 @celery_app.task
 def test_function():
-    with flask_app.app_context():        
+    with flask_app.app_context():   
+        print('hello...')     
         logging.info(f'getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
 @celery_app.on_after_configure.connect
