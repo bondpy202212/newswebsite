@@ -42,10 +42,11 @@ def setup_periodic_tasks(sender, **kwargs):
 #     celery_app.start()
 
 if __name__=='__main__':
-    celery_app.start()
-    with flask_app.app_context():
-        getnews.get_news_snippets()
-        getnews.get_news_content()
+    flask_app.run()
+    # celery_app.start()
+    # with flask_app.app_context():
+    #     getnews.get_news_snippets()
+    #     getnews.get_news_content()
     
 
 # for start gunicorn from terminal: gunicorn main:app --bind localhost:8000 --workers 4 --timeout 120 --log-level info
