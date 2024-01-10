@@ -39,6 +39,7 @@ def setup_periodic_tasks(sender, **kwargs):
     # sender.add_periodic_task(crontab(second='*/10'), test_function.s())
 
 if __name__ == "__main__":
+    flask_app.run()
     celery_app.start()
 
 
