@@ -45,8 +45,8 @@ if __name__=='__main__':
     with flask_app.app_context():
         getnews.get_news_snippets()
         getnews.get_news_content()
-        celery_app.start()
-        
+    celery_app.start()
+
 # for start gunicorn from terminal: gunicorn main:app --bind localhost:8000 --workers 4 --timeout 120 --log-level info
 
 
