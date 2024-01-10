@@ -39,11 +39,15 @@ redirect_stderr=true
 stdout_logfile=/home/bondar1983ovdoc1/newswebsite/appnews.log
 
 ---------
+sudo rm -r celery
 sudo rm /etc/supervisor/conf.d/celery_worker.conf
 sudo rm /etc/supervisor/conf.d/celery_beat.conf
 ---------
 
 """
+
+
+
 
 
 
