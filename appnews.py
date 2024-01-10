@@ -92,7 +92,7 @@ def schedule_jobs():
 if __name__ == '__main__':
     t = threading.Thread(target=schedule_jobs)
     t.start()
-    flask_app.run()
+    flask_app.run(port=5001)
 
 
 
