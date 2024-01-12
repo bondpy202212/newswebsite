@@ -10,15 +10,15 @@ flask_app = create_app()
 
 log_file_name = 'app.log'
 logging.basicConfig(filename=log_file_name, level=logging.INFO)
-# logging.basicConfig(filename=log_file_name, filemode='w', level=logging.INFO)
+
 
 def test_func():
     with flask_app.app_context():
         logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
-        # with open(log_file_name, 'w') as file:
-        #     file.write(f'test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
+        with open(log_file_name, 'w') as file:
+            file.write(f'test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
+       
 
-            
 # # ----------- # # ----------- 
 # # start with gunicorn + supervisor
 @flask_app.route('/')
@@ -32,9 +32,14 @@ if __name__ == "__main__" or "gunicorn" in os.environ.get("SERVER_SOFTWARE", "")
         time.sleep(10)
 
 
+
+
 # # ----------- 
 # # for file " appnews_gunicorn.conf" (supervisor)
 # # -----------  
+# logging.basicConfig(filename=log_file_name, filemode='w', level=logging.INFO)
+# with open(log_file_name, 'w') as file:
+        #     file.write(f'test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
 """
 sudo nano /etc/supervisor/conf.d/appnews_gunicorn.conf
 
