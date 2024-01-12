@@ -29,7 +29,7 @@ def getnews_snippets():
 def getnews_content():
     with flask_app.app_context():
         getnews.get_news_content()
-        with open(log_file_name, 'w') as file:
+        with open(log_file_name, 'a') as file:
             file.write(f'INFO:root: getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
 
 
