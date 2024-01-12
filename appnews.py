@@ -19,11 +19,11 @@ def test_func():
             file.write(f'test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
        
 
-# # # ----------- # # ----------- 
-# # # start with gunicorn + supervisor
-# @flask_app.route('/')
-# def hello():
-#     return 'Hello, World!'
+# # ----------- # # ----------- 
+# # start with gunicorn + supervisor
+@flask_app.route('/')
+def hello():
+    return 'Hello, World!'
 
 # start with gunicorn + supervisor
 if __name__ == "__main__" or "gunicorn" in os.environ.get("SERVER_SOFTWARE", ""):
