@@ -16,5 +16,6 @@ t.txt
 t2.txt
 celerybeat-schedule.*
 config.py
+app.log
 
-!webapp.db
+webapp.db
