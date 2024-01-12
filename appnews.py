@@ -17,7 +17,8 @@ def test_func():
 @flask_app.route('/')
 def hello():
     return 'Hello, World!'
-    
+
+import os  
 # start with gunicorn + supervisor
 if __name__ == "__main__" or "gunicorn" in os.environ.get("SERVER_SOFTWARE", ""):
     while True:
