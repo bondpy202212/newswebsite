@@ -14,9 +14,9 @@ logging.basicConfig(filename=log_file_name, level=logging.INFO)
 
 def test_func():
     with flask_app.app_context():
-        logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
-        # with open(log_file_name, 'w') as file:
-        #     file.write(f'test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
+        # logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
+        with open(log_file_name, 'w') as file:
+            file.write(f'INFO:root:test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
        
 
 # # # ----------- # # ----------- 
