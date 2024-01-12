@@ -18,6 +18,5 @@ celerybeat-schedule.*
 config.py
 app.log
 t/
-
 webapp.db
 webapp
