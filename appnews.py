@@ -21,15 +21,15 @@ def test_func():
 
 # # # ----------- # # ----------- 
 # # # start with gunicorn + supervisor
-@flask_app.route('/')
-def hello():
-    return 'Hello, World!'
+# @flask_app.route('/')
+# def hello():
+#     return 'Hello, World!'
 
-# start with gunicorn + supervisor
-if __name__ == "__main__" or "gunicorn" in os.environ.get("SERVER_SOFTWARE", ""):
-    while True:
-        test_func()
-        time.sleep(10)
+# # start with gunicorn + supervisor
+# if __name__ == "__main__" or "gunicorn" in os.environ.get("SERVER_SOFTWARE", ""):
+#     while True:
+#         test_func()
+#         time.sleep(10)
 
 
 
@@ -77,11 +77,11 @@ stdout_logfile=/home/user_name/newswebsite/app_gunicorn.log
 # # ----------- # # -----------
 # # ----------- # # ----------- 
 # # start with supervisor
-# if __name__ == "__main__":
-#     while True:
-#         test_func()
-#         time.sleep(10)
-#         time.sleep(86400)
+if __name__ == "__main__":
+    while True:
+        test_func()
+        time.sleep(10)
+        time.sleep(86400)
 # # ----------- # # -----------
 # # ----------- # # ----------- 
 
