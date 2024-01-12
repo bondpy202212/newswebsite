@@ -81,7 +81,7 @@ if __name__ == "__main__":
     while True:
         test_func()
         time.sleep(10)
-        time.sleep(86400)
+        # time.sleep(86400)
 # # ----------- # # -----------
 # # ----------- # # ----------- 
 
