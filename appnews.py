@@ -4,6 +4,7 @@ import time
 from datetime import datetime
 
 from webapp import create_app
+from webapp.news.parsers import getnews  
 
 
 flask_app = create_app()
