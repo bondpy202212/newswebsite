@@ -14,10 +14,19 @@ def test_func():
     with flask_app.app_context():
         logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
-if __name__ == "__main__":
+# start with gunicorn + supervisor
+if __name__ == "__main__" or "gunicorn" in os.environ.get("SERVER_SOFTWARE", ""):
     while True:
         test_func()
         time.sleep(10)
+
+
+# # ----------- # # ----------- 
+# # start with supervisor
+# if __name__ == "__main__":
+#     while True:
+#         test_func()
+#         time.sleep(10)
 
 
 
@@ -45,6 +54,7 @@ sudo rm /etc/supervisor/conf.d/celery_beat.conf
 ---------
 
 """
+# # ----------- # # ----------- 
 
 
 

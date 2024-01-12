@@ -9,7 +9,7 @@
 
 
 
-
+# import os
 from fabric.api import env, settings, run, local, cd, sudo
 
 from config import mIP, mNAME, mADRESSVM
@@ -24,10 +24,16 @@ env.user = "bondar1983ovdoc1"
 # env.hosts = [mIP]
 # env.user = mNAME
 
+# current_directory = os.path.dirname(os.path.abspath(__file__))
+# adress_filename = os.path.join(current_directory, '.ssh/id_rsa')
+# adress_filename = str(adress_filename.replace("\\", "/"))
+# print(adress_filename)
+# env.key_filename = adress_filename
 
 # env.key_filename = "C:/.ssh/id_rsa"
-# env.reject_unknown_hosts = False
-# env.disable_known_hosts = True
+
+env.reject_unknown_hosts = False
+env.disable_known_hosts = True
 
 def test():
     with settings(connect_kwargs={"key_filename": "C:/.ssh/id_rsa"}, warn_only=True):
