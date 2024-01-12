@@ -9,8 +9,8 @@ from webapp import create_app
 flask_app = create_app()
 
 log_file_name = 'app.log'
-# logging.basicConfig(filename=log_file_name, level=logging.INFO)
-logging.basicConfig(filename=log_file_name, filemode='w', level=logging.INFO)
+logging.basicConfig(filename=log_file_name, level=logging.INFO)
+# logging.basicConfig(filename=log_file_name, filemode='w', level=logging.INFO)
 
 def test_func():
     with flask_app.app_context():
