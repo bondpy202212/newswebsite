@@ -17,7 +17,21 @@ def test_func():
         # logging.info(f'test_function   : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
         with open(log_file_name, 'w') as file:
             file.write(f'INFO:root:test_function: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
-       
+
+
+def getnews_snippets():
+    with flask_app.app_context():
+        getnews.get_news_snippets()
+        with open(log_file_name, 'w') as file:
+            file.write(f'INFO:root: getnews_snippets: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
+
+def getnews_content():
+    with flask_app.app_context():
+        getnews.get_news_content()
+        with open(log_file_name, 'w') as file:
+            file.write(f'INFO:root: getnews_content : {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}\n')
+
+
 
 # # # ----------- # # ----------- 
 # # # start with gunicorn + supervisor
@@ -79,9 +93,12 @@ stdout_logfile=/home/user_name/newswebsite/app_gunicorn.log
 # # start with supervisor
 if __name__ == "__main__":
     while True:
-        test_func()
-        time.sleep(10)
-        # time.sleep(86400)
+        # test_func()
+        # time.sleep(10)
+
+        getnews_snippets()
+        getnews_content()
+        time.sleep(86400)
 # # ----------- # # -----------
 # # ----------- # # ----------- 
 
