@@ -17,7 +17,7 @@ def test_func():
 if __name__ == "__main__":
     while True:
         test_func()
-        # time.sleep(10)
+        time.sleep(10)
 
 
 
@@ -33,11 +33,11 @@ directory=/home/bondar1983ovdoc1/newswebsite
 user=bondar1983ovdoc1
 autostart=true
 autorestart=true
-startsecs=10
 startretries=3
 redirect_stderr=true
 stdout_logfile=/home/bondar1983ovdoc1/newswebsite/appnews.log
 
+startsecs=10
 ---------
 sudo rm -r celery
 sudo rm /etc/supervisor/conf.d/celery_worker.conf
