@@ -43,6 +43,6 @@ def test():
 def update():
 	# with cd(mADRESSVM):	
 	with cd("/home/bondar1983ovdoc1/newswebsite"):		
-		run("git stash")
-		run("git pull")
+		# run("git stash")
+		# run("git pull")
 		sudo("supervisorctl restart flask")
