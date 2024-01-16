@@ -31,7 +31,7 @@ WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
 
 SECRET_KEY = "szdgdfhgfjghkfhgkeaf$wer"
 
-REMEMBER_COOKIE_DURATION = timedelta(days=150) 								# remember users days=150
+REMEMBER_COOKIE_DURATION = timedelta(days=1095) 								# remember users days=150
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 																					# "sqlite:///" -> name DB
