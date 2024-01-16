@@ -1,12 +1,10 @@
 from flask import current_app
 import requests
 
-
-
-# from webapp.degree import degree_result
+from webapp.degree import degree_result
 
 # -------------------------------
-def weather_by_city():	
+def weather_by_city(city_name):	
 
 	params1 = {
 		'lat': current_app.config['LAT_CITY'],
@@ -16,13 +14,10 @@ def weather_by_city():
 	}
 	
 	weather_url = current_app.config['WEATHER_URL']	
-	print('hellosdf')
 	try:
 		result = requests.get(weather_url, params=params1)
 		result.raise_for_status()                 # status answer server (error 4xx, 5xx)
 		weather = result.json()
-		print(weather)
-
 
 		if "main" in weather:
 			if "temp" in weather["main"]:
@@ -36,7 +31,7 @@ def weather_by_city():
 									'humidity'	: round(weather["main"]["humidity"], 1),
 									'visibility': round((weather["visibility"])/1000, 1),
 									'wind_speed': round((weather['wind']["speed"]), 1),
-									# 'wind_deg'	: degree_result(weather['wind']["deg"])									
+									'wind_deg'	: degree_result(weather['wind']["deg"])									
 									}
 					return current_condition
 				except(IndexError, TypeError): # (server -> give wrong data)
@@ -50,6 +45,4 @@ def weather_by_city():
 		print("--/Newwork Error/--")
 		return False
 	return False
-
-
 
