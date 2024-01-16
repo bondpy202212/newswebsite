@@ -41,6 +41,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '..', 'webapp.db'
 
 
 
+
 #  for file weather_html.py
 # if __name__ == '__main__':
 # 	weather_url1 = 'https://api.openweathermap.org/data/2.5/weather?'
