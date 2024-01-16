@@ -16,13 +16,13 @@ ALL_NEWS = 0
 
 
 # Weather
-# WEATHER_DEFAULT_CITY = 'Washington'											# weather location
-# LAT_CITY = 47.751076
-# LON_CITY = -120.740135
+WEATHER_DEFAULT_CITY = 'Washington'											# weather location
+LAT_CITY = 38.889805
+LON_CITY = -77.009056
 
-WEATHER_DEFAULT_CITY = 'New York'											# weather location
-LAT_CITY = 40.730610
-LON_CITY = -73.935242
+# WEATHER_DEFAULT_CITY = 'New_York'											# weather location
+# LAT_CITY = 40.730610
+# LON_CITY = -73.935242
 
 WEATHER_API_KEY = '05966ac74347d94fb6dcd48d722b66eb'		 				# from https://openweathermap.org/
 WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather?'
