@@ -36,13 +36,13 @@ env.reject_unknown_hosts = False
 env.disable_known_hosts = True
 
 def test():
-    with settings(connect_kwargs={"key_filename": "C:/.ssh/id_rsa"}, warn_only=True):
+    with settings(connect_kwargs={"key_filename": "C:/Users/Alex01/.ssh/id_rsa"}, warn_only=True):
         run("date")
         local("date")
 
 def update():
 	# with cd(mADRESSVM):	
 	with cd("/home/bondar1983ovdoc1/newswebsite"):		
-		# run("git stash")
-		# run("git pull")
+		run("git stash")
+		run("git pull")
 		sudo("supervisorctl restart flask")
