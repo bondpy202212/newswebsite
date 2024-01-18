@@ -15,8 +15,8 @@ from fabric.api import env, settings, run, local, cd, sudo
 from config import mIP, mNAME, mADRESSVM
 
 
-# vm_ip = "35.197.36.43"
-# user_name = "bondar1983ovdoc1"
+vm_ip = "35.197.36.43"
+user_name = "bondar1983ovdoc1"
 # print(mIP)
 # print(type(mIP))
 # print(mNAME)
@@ -24,6 +24,7 @@ from config import mIP, mNAME, mADRESSVM
 
 env.hosts = [vm_ip]
 env.user = user_name
+
 
 # env.hosts = [mIP]
 # env.user = mNAME
