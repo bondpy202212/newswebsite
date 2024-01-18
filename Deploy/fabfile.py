@@ -22,12 +22,12 @@ user_name = "bondar1983ovdoc1"
 # print(mNAME)
 # print(type(mNAME))
 
-env.hosts = [vm_ip]
-env.user = user_name
+# env.hosts = [vm_ip]
+# env.user = user_name
 
 
-# env.hosts = [mIP]
-# env.user = mNAME
+env.hosts = [str(mIP)]
+env.user = str(mNAME)
 
 # current_directory = os.path.dirname(os.path.abspath(__file__))
 # adress_filename = os.path.join(current_directory, '.ssh/id_rsa')
