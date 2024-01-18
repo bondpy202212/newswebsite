@@ -24,6 +24,7 @@ from config import mIP, mNAME, mADRESSVM
 env.hosts = [str(mIP)]
 env.user = str(mNAME)
 
+
 # current_directory = os.path.dirname(os.path.abspath(__file__))
 # adress_filename = os.path.join(current_directory, '.ssh/id_rsa')
 # adress_filename = str(adress_filename.replace("\\", "/"))
