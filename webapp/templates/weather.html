@@ -25,38 +25,45 @@
     <table>
         <tr>
             <td>Temperature:</td>
-            <td>{{weather.temp_C}}(°C)</td>
+            <td>{{ weather.temp_F }}(°F)</td>
+            <td>| {{weather.temp_C}}(°C)</td>
         </tr>
         <tr>
             <td>Feels like:</td>
-        <td>{{ weather.FeelsLikeC }}(°C)</td>
+            <td>{{ weather.FeelsLikeF }}(°F)</td>
+            <td>| {{ weather.FeelsLikeC }}(°C)</td>
         </tr>
         <tr>
             <td>Temp max:</td>
-            <td>{{ weather.temp_max }}(°C)</td>
+            <td>{{ weather.temp_maxF }}(°F)</td>
+            <td>| {{ weather.temp_max }}(°C)</td>
         </tr>
         <tr>
             <td>Temp min:</td>
-            <td>{{ weather.temp_min }}(°C)</td>
+            <td>{{ weather.temp_minF }}(°F)</td>
+            <td>| {{ weather.temp_min }}(°C)</td>
         </tr>
         <tr>
-            <td>Pressure:</td>
-            <td>{{ weather.pressure }}(hPa)</td>
+            <td>Pressure:</td> 
+            <td>{{ weather.pressure_inHg }}(in)</td>
+            <td>| {{ weather.pressure }}(hPa)</td>
+        </tr>        
+        <tr>
+            <td>Visibility:</td>
+            <td>{{ weather.visibility_mi }}(mi)</td>
+            <td>| {{ weather.visibility }}(km)</td>
+        </tr>
+        <tr>
+            <td>Wind speed:</td>
+            <td>{{ weather.wind_speed_mph }}(mph)</td>
+            <td>| {{ weather.wind_speed }}(m/s)</td>
         </tr>
         <tr>
             <td>Humidity:</td>
             <td>{{ weather.humidity }}(%)</td>
         </tr>
         <tr>
-            <td>Visibility:</td>
-            <td>{{ weather.visibility }}(km)</td>
-        </tr>
-        <tr>
-            <td>Wind speed:</td>
-            <td>{{ weather.wind_speed }}(m/s)</td>
-        </tr>
-        <tr>
-            <td>Direct wind:</td>
+            <td>Direction wind:</td>
             <td>{{ weather.wind_deg }}(&rarr;)</td>
         </tr>
 
