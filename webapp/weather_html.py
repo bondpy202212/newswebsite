@@ -20,12 +20,12 @@ def weather_by_city(city_name):
 		result.raise_for_status()                 # status answer server (error 4xx, 5xx)
 		weather = result.json()
 
-		print(weather)
-		print('temp_C    :' ,round(weather["main"]["temp"], 1))
-		print('pressure  :' ,round(weather["main"]["pressure"], 1))
-		print('humidity  -:' ,round(weather["main"]["humidity"], 1))
-		print('visibility:' ,round((weather["visibility"])/1000, 1))
-		print('wind_speed:' ,round((weather['wind']["speed"]), 1))
+		# print(weather)
+		# print('temp_C    :' ,round(weather["main"]["temp"], 1))
+		# print('pressure  :' ,round(weather["main"]["pressure"], 1))
+		# print('humidity  -:' ,round(weather["main"]["humidity"], 1))
+		# print('visibility:' ,round((weather["visibility"])/1000, 1))
+		# print('wind_speed:' ,round((weather['wind']["speed"]), 1))
 
 		if "main" in weather:
 			if "temp" in weather["main"]:
