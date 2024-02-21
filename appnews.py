@@ -99,7 +99,8 @@ if __name__ == "__main__":
 
         getnews_snippets()
         getnews_content()
-        time.sleep(86400)
+        # time.sleep(86400)
+        time.sleep(43200)
 # # ----------- # # -----------
 # # ----------- # # ----------- 
 
